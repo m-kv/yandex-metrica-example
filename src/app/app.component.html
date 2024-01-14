@@ -1,0 +1,65 @@
+<form [formGroup]="form" class="app__container">
+  <h2>Пример работы с Яндекс Метрикой</h2>
+  <h3>Предположим, что мы скачиваем выписку.</h3>
+
+  <p>Выберите формат:</p>
+  <div class="app__formats">
+    <label>
+      <input type="radio" value="txt" formControlName="format" />
+      <span>txt</span>
+    </label>
+    <label>
+      <input type="radio" value="doc" formControlName="format" />
+      <span>doc</span>
+    </label>
+    <label>
+      <input type="radio" value="pdf" formControlName="format" />
+      <span>pdf</span>
+    </label>
+    <label>
+      <input type="radio" value="1C" formControlName="format" />
+      <span>1C</span>
+    </label>
+  </div>
+
+  <p>Выберите тип оборотов:</p>
+  <div class="app__turnovers">
+    <div>
+      <input
+        type="checkbox"
+        formControlName="turnoverPerDay"
+        id="turnoverPerDay"
+      />
+      <label for="turnoverPerDay">За день</label>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        formControlName="turnoverPerWeek"
+        id="turnoverPerWeek"
+      />
+      <label for="turnoverPerWeek">За неделю</label>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        formControlName="turnoverPerMonth"
+        id="turnoverPerMonth"
+      />
+      <label for="turnoverPerMonth">За месяц</label>
+    </div>
+  </div>
+
+  <div class="app__buttons">
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      (click)="submit('download')"
+    >
+      Скачать
+    </button>
+    <button type="submit" [disabled]="form.invalid" (click)="submit('print')">
+      Печать
+    </button>
+  </div>
+</form>

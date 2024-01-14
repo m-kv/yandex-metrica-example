@@ -1,0 +1,23 @@
+.app {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__formats {
+    display: flex;
+  }
+
+  &__turnovers {
+    display: flex;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: 10px;
+
+    button:not(:first-of-type) {
+      margin-left: 10px;
+    }
+  }
+}
